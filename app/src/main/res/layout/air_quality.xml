@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp">
+    <!--start left-->
+    <LinearLayout
+        android:id="@+id/left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_margin="5dp"
+        android:orientation="vertical"
+        android:padding="5dp">
+        <TextView
+            android:id="@+id/air_quality"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="空气质量"
+            android:textSize="18sp"/>
+        <TextView
+            android:id="@+id/air_dec"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="良"
+            android:textSize="18sp"/>
+        <TextView
+            android:id="@+id/air_dec_sum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="40"
+            android:textSize="60sp"/>
+    </LinearLayout>
+    <!--end left-->
+    <!--start right-->
+    <LinearLayout
+        android:id="@+id/right"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="5dp"
+        android:padding="5dp"
+        android:layout_toRightOf="@id/left">
+        <!--start pm2.5-->
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:text="pm2,5 u g/m³"
+                android:textSize="14sp"/>
+            <TextView
+                android:id="@+id/air_tv_25"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text="40"
+                android:textSize="14sp"/>
+        </RelativeLayout>
+        <ProgressBar
+            android:id="@+id/air_progressBar25"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:max="1000"
+            android:progress="40"
+            android:indeterminate="false"/>
+        <!--end pm2.5-->
+        <!--start pm10-->
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:text="pm10 u g/m³"
+                android:textSize="14sp"/>
+            <TextView
+                android:id="@+id/air_tv_10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text="150"
+                android:textSize="14sp" />
+        </RelativeLayout>
+        <ProgressBar
+            android:id="@+id/air_progressBar10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:max="1000"
+            android:progress="150"
+            android:indeterminate="false"/>
+        <!--end pm10-->
+        <TextView
+            android:id="@+id/air_tv_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="3dp"
+            android:text="今天的空气质量令人满意，各类人群可正常活动。今天的空气质量令人满意，各类人群可正常活动。今天的空气质量令人满意，各类人群可正常活动。"
+            android:ellipsize="end"
+            android:lines="3"
+            android:textSize="14sp"/>
+    </LinearLayout>
+    <!--end right-->
+</RelativeLayout>

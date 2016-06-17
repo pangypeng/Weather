@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nestedScrollView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.pangypeng.weather.MainActivity">
+
+    <RelativeLayout
+        android:id="@+id/root"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <!--
+            android:foreground="?android:attr/selectableItemBackground" 前景色
+            app:cardCornerRadius="8dp"app:cardCornerRadius="8dp" 拐角半径
+            app:cardElevation="8dp" 海拔
+        -->
+        <!--实时天气-->
+       <android.support.v7.widget.CardView
+           android:id="@+id/head"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_margin="10dp"
+           android:clickable="true"
+           android:foreground="?android:attr/selectableItemBackground"
+           app:cardCornerRadius="8dp"
+           app:cardElevation="8dp">
+        <include layout="@layout/realtime_weather"/>
+       </android.support.v7.widget.CardView>
+        <!--空气质量-->
+        <android.support.v7.widget.CardView
+            android:id="@+id/pm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/head"
+            android:layout_margin="10dp"
+            android:clickable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="8dp">
+            <include layout="@layout/air_quality"/>
+        </android.support.v7.widget.CardView>
+        <!--一周天气-->
+        <android.support.v7.widget.CardView
+            android:id="@+id/future"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/pm"
+            android:layout_margin="10dp"
+            android:clickable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="8dp">
+            <com.pangypeng.weather.view.ListViewForScrollView
+                android:id="@+id/future_listview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:divider="@null"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp"/>
+        </android.support.v7.widget.CardView>
+        <!--生活-->
+        <android.support.v7.widget.CardView
+            android:id="@+id/left"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/future"
+            android:layout_margin="10dp"
+            android:clickable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="8dp">
+            <com.pangypeng.weather.view.ListViewForScrollView
+                android:id="@+id/life_listview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:divider="@null"
+                android:layout_margin="5dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"/>
+        </android.support.v7.widget.CardView>
+    </RelativeLayout>
+</android.support.v4.widget.NestedScrollView>
